@@ -1,12 +1,12 @@
 var countLetters = function thisCountsHowManyTimesEachLetterAppearsInSentence (input) {
-  var noSpaces = input.split(" ").join("").split("");
   var result = {};
-  for (var i = 0; i < noSpaces.length; i++) {
-    var letter = noSpaces[i];
-    if (result[letter]) {
+  for (var i = 0; i < input.length; i++) {
+    var letter = input[i];
+    if (letter !== " ")  {
+      if (!result[letter]) {
+        result[letter] = 0;
+      }
       result[letter] = result[letter] + 1;
-    } else {
-      result[letter] = 1;
     }
   }
   return result;
